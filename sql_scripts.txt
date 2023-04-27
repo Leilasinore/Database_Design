@@ -1,0 +1,42 @@
+exercise
+This task requires you to select the sql_store database then the products  table 
+from that db:Query products table as follows:
+a)return all products
+b)name column
+c)unit price 
+d)new price(unit price * 1.1)
+
+
+//this is the script for this exercise
+SELECT name, unit_price, (unit_price * 1.1) AS 'new price'
+
+FROM products;
+
+
+//comparison operators in mysql-select customers with points greater than 3000
+SELECT *
+FROM customers
+WHERE points > 3000;
+
+//exercise: write a query to return all orders made in 2019 from the orders table
+SELECT *
+FROM orders
+WHERE order_date > '2019-01-01' AND points>1000
+
+//exercise
+SELECT *
+
+FROM order_items 
+WHERE order_id=6 AND (quantity * unit_price) >30;
+
+//exercises
+SELECT *
+
+FROM products 
+WHERE quantity_in_stock IN  (49, 38,72);
+
+//exercise
+SELECT *
+FROM customers
+WHERE birth_date BETWEEN '1990-01-01' AND '2000-01-01';
+
