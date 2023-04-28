@@ -1,0 +1,64 @@
+exercise/LIKE operator
+
+--Get customers whose address has AVENUE or TRAIL
+USE sql_store;
+SELECT *
+FROM customers
+WHERE address LIKE '%AVENUE%' OR address LIKE '%TRAIL%';
+
+exercise: LIKE operator
+--Get customers whose phone number ends with 9;
+
+USE sql_store;
+SELECT *
+FROM customers
+WHERE phone LIKE '%9';
+
+//REGEXP operator-powerful for working with strings
+the below query selects customers whose last name has field or mac
+USE sql_store;
+SELECT *
+FROM customers
+WHERE last_name REGEXP 'field|mac';
+
+//below selects customers whose last_name ends with field or starts with mac
+USE sql_store;
+SELECT*
+FROM customers 
+WHERE last_name REGEXP '%field|^mac';
+
+////below selects customers whose last_name  has an e preceded by any character between a and h
+USE sql_store;
+SELECT*
+FROM customers 
+WHERE last_name REGEXP '[a-h]e';
+
+//IS NULL OPERATOR
+//exercise write a query to return customers whose order is not shipped yet
+USE sql_store;
+SELECT *
+FROM orders 
+WHERE shipped_date IS  NULL;
+
+//exercise write a query to return customers whose orders have been shipped.
+USE sql_store;
+SELECT *
+FROM orders 
+WHERE shipped_date IS NOT NULL;
+
+//exercise
+USE sql_store;
+SELECT * 
+FROM order_items
+WHERE order_id =2
+ORDER BY (quantity * unit_price) DESC;
+
+//exercise-write a query to get the top 3 loyal customers,these are customers with the top 3 highest points
+USE sql_store;
+SELECT *
+FROM customers
+WHERE points >2000
+ORDER BY points DESC
+LIMIT 3;
+
+
