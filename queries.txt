@@ -1,10 +1,3 @@
-//JOIN ,querying two tables
-USE sql_store;
-SELECT 
-FROM orders
-JOIN customers on orders.customer_id=customers.customer_id;
-
-
 //creating a table and inserting data
 CREATE TABLE mybooks(id INTEGER PRIMARY KEY,name Text,rating integer)
 ;
@@ -45,7 +38,6 @@ JOIN cb_vendorinformation ON maintable_	4X2TF.GroupID=cb_vendorinformation.Group
 GROUP BY CompanyName AS Count;
 ORDER BY Count;
 ORDER BY GroupID DESC;
-
 
 
 
